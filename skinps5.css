@@ -1,115 +1,280 @@
-/* ===== BASE DEL MANDO ===== */
-.controller.custom {
-  background: #f5f5f5 !important;
-  border-radius: 60px !important;
-  box-shadow:
-    inset 0 0 0 6px #111,
-    0 10px 30px rgba(0,0,0,.25) !important;
+/*BEGIN PS4 Controller Styling*/
+.controller.ds4 {
+    background: url(White_Skin.png);
+    height: 700px;
+    width: 1200px;
+    /*    margin-left: -403px;
+        margin-top: -280px;*/
 }
 
-/* ===== TOUCHPAD ===== */
-.controller.custom .touchpad,
-.controller.custom .pad {
-  background: #111 !important;
-  border-radius: 18px !important;
-  box-shadow: inset 0 0 0 2px #222 !important;
+.ds4.disconnected div {
+    display: none;
 }
 
-/* ===== STICKS ===== */
-.controller.custom .stick,
-.controller.custom .analog {
-  background: #111 !important;
-  border: 4px solid #2a2a2a !important;
-  border-radius: 50% !important;
-  box-shadow:
-    inset 0 0 10px rgba(255,255,255,.08),
-    0 3px 8px rgba(0,0,0,.35) !important;
+.ds4 .triggers {
+    width: 598px;
+    height: 90px;
+    position: absolute;
+    left: 299px;
+    top: 38px;
 }
 
-/* ===== BASE DE LOS BOTONES ===== */
-.controller.custom .button {
-  background: rgba(255,255,255,.15) !important;
-  border: 2px solid rgba(0,0,0,.18) !important;
-  border-radius: 50% !important;
-  box-shadow: inset 0 0 8px rgba(255,255,255,.25) !important;
+.ds4 .trigger {
+    width: 99px;
+    height: 100%;
+    background: url(Trigger_Pressed.png);
+    opacity: 0;
 }
 
-/* ===== BOTONES PRINCIPALES (PS5 transparentes con color suave) ===== */
-.controller.custom .button.a,
-.controller.custom .button.cross {
-  background: rgba(0, 102, 255, 0.18) !important;
-  border-color: #3b82f6 !important;
+.ds4 .trigger.left {
+    float: left;
 }
 
-.controller.custom .button.b,
-.controller.custom .button.circle {
-  background: rgba(255, 59, 48, 0.18) !important;
-  border-color: #ff5c5c !important;
+.ds4 .trigger.right {
+    float: right;
+    background-position-x: 99px;
 }
 
-.controller.custom .button.x,
-.controller.custom .button.square {
-  background: rgba(255, 105, 180, 0.18) !important;
-  border-color: #ff6ad5 !important;
+.ds4 .bumper {
+    width: 200px;
+    height: 45px;
+    background: url(Bumper.png) no-repeat;
+    opacity: 0;
 }
 
-.controller.custom .button.y,
-.controller.custom .button.triangle {
-  background: rgba(0, 255, 120, 0.18) !important;
-  border-color: #31d67b !important;
+.ds4 .bumpers {
+    position: absolute;
+    width: 672px;
+    height: 23px;
+    left: 263px;
+    top: 132px;
 }
 
-/* ===== D-PAD ===== */
-.controller.custom .dpad .button,
-.controller.custom .direction {
-  background: #111 !important;
-  border: 1px solid #333 !important;
-  box-shadow: inset 0 0 6px rgba(255,255,255,.06) !important;
+.ds4 .bumper.pressed {
+    opacity: 0.8;
 }
 
-/* ===== L1/R1 ===== */
-.controller.custom .bumper,
-.controller.custom .shoulder {
-  background: #111 !important;
-  border-radius: 16px !important;
-  box-shadow: inset 0 0 0 2px #2b2b2b !important;
+.ds4 .bumper.left {
+    /* -webkit-transform: rotateY(180deg); */
+    /* transform: rotateY(180deg); */
+    float: left;
 }
 
-/* ===== L2/R2 ===== */
-.controller.custom .trigger {
-  background: linear-gradient(180deg, #1c1c1c 0%, #0f0f0f 100%) !important;
-  border-radius: 18px !important;
-  box-shadow: inset 0 0 0 2px #2c2c2c !important;
+.ds4 .bumper.right {
+    float: right;
+    transform: rotateY(180deg);
 }
 
-/* ===== BOTONES SHARE / OPTIONS / PS ===== */
-.controller.custom .meta,
-.controller.custom .start,
-.controller.custom .select,
-.controller.custom .system {
-  background: #111 !important;
-  border-radius: 999px !important;
-  box-shadow: inset 0 0 0 2px #2b2b2b !important;
+.ds4 .touchpad {
+    width: 350px;
+    height: 300px;
+    position: absolute;
+    left: 422px;
+    top: 74px;
 }
 
-/* ===== LIGHT BAR AZUL ===== */
-.controller.custom::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 72px;
-  transform: translateX(-50%);
-  width: 150px;
-  height: 10px;
-  background: linear-gradient(90deg, #1ea7ff, #58c3ff, #1ea7ff);
-  border-radius: 999px;
-  box-shadow: 0 0 18px rgba(30,167,255,.85);
+.ds4 .touchpad.pressed {
+    background: url(Touchpad.png) no-repeat center;
 }
 
-/* ===== EFECTO PRESIONADO ===== */
-.controller.custom .pressed,
-.controller.custom .button.pressed {
-  transform: scale(0.94) !important;
-  filter: brightness(1.2) !important;
-  box-shadow: 0 0 12px rgba(255,255,255,.3) !important;
+.ds4 .meta {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 546px;
+    bottom: 264px;
 }
+
+.ds4 .meta.pressed {
+    background: url(Home.png) no-repeat center;
+}
+
+/*Not needed, but I like keeping them here for posterity*/
+.ds4 .p0{
+background-position: 0 -6px;
+}
+.ds4 .p1{
+background-position: 0 -28px;
+}
+.ds4 .p2{
+background-position: 0 -49px;
+}
+.ds4 .p3{
+background-position: 0 -70px;
+}*/
+.ds4 .arrows {
+    position: absolute;
+    width: 352px;
+    height: 46px;
+    top: 142px;
+    left: 227px;
+}
+
+.ds4 .back, .ds4 .start {
+    background: url(Select.png);
+    width: 26px;
+    height: 43px;
+    opacity: 0;
+}
+.ds4 .start {
+    position: absolute;
+    left: 546px;
+    bottom: -30px;
+}
+.ds4 .back {
+    position: absolute;
+    left: 170px;
+    bottom: -30px;
+}
+
+
+.ds4 .back.pressed, .ds4 .start.pressed {
+    /* background-position-y: -21px; */
+    /* margin-top: 2px; */
+    opacity: 1;
+}
+
+.ds4 .back {
+    float: left;
+    /* width: 28px; */
+}
+
+.ds4 .start {
+    float: right;
+    /* width: 28px; */
+    background-position: 0px 0;
+}
+
+.ds4 .abxy {
+    position: absolute;
+    width: 170px;
+    height: 171px;
+    top: 200px;
+    left: 762px;
+}
+
+.ds4 .button.pressed {
+    background-position-y: 55px;
+    /* margin-top: 5px; */
+}
+
+.ds4 .a {
+    background-position: 0 0;
+    bottom: 0px;
+    left: 58px;
+}
+
+.ds4 .b {
+    background-position: -57px 0;
+    top: 57px;
+    right: -3px;
+}
+
+.ds4 .x {
+    background-position: -113px 0;
+    top: 57px;
+}
+
+.ds4 .y {
+    background-position: 55px 0;
+    left: 58px;
+    bottom: 119px;
+}
+
+.ds4 .sticks {
+    position: absolute;
+    width: 364px;
+    height: 105px;
+    top: 348px;
+    left: 422px;
+}
+
+.ds4 .stick {
+    position: absolute;
+    background: url(Sticks_Red.png);
+    height: 94px;
+    width: 94px;
+}
+
+.ds4 .stick.pressed.left {
+    background-position-x: -96px;
+}
+
+.ds4 .stick.pressed.right {
+    background-position-x: -192px;
+}
+
+.ds4 .stick.left {
+    top: 0;
+    left: 0;
+}
+
+.ds4 .stick.right {
+    top: calc(100% - 105px);
+    left: calc(100% - 105px);
+}
+
+.ds4 .dpad {
+    position: absolute;
+    width: 125px;
+    height: 126px;
+    top: 220px;
+    left: 286px;
+}
+
+.ds4 .face.up, .ds4 .face.down {
+    width: 36px;
+    height: 52px;
+}
+
+.ds4 .face.left, .ds4 .face.right {
+    width: 52px;
+    height: 36px;
+}
+
+.ds4 .face.up {
+    left: 44px;
+    top: 0;
+    background-position: -37px 0px;
+}
+
+.ds4 .face.down {
+    left: 44px;
+    bottom: 0;
+    background-position: 0px 0;
+}
+
+.ds4 .face.left {
+    top: 45px;
+    left: 0;
+    background-position: 104px 0;
+}
+
+.ds4 .face.right {
+    top: 45px;
+    right: 0px;
+    background-position: 52px 0;
+}
+
+.ds4 .face.pressed {
+    /* margin-top: 5px; */
+    background-position-y: 52px;
+}
+
+.ds4.half {
+    margin-top: -300px;
+}
+
+/*END PS4 Controller Styling*/
+
+/*BEGIN PS4 White Controller Styling*/
+.ds4.white .back, .ds4 .start {
+    background-image: url(Start.png);
+    width: 26px;
+    height: 43px;
+}
+
+/*END PS4 White Controller Styling*/
+
+/* Red tint fallback */
+.ds4 .stick{filter:hue-rotate(-25deg) saturate(1.6) brightness(1.05);}
